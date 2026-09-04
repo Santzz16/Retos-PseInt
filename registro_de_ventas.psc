@@ -119,15 +119,20 @@ Algoritmo registro_de_ventas
 								Escribir "Ingrese codigo de producto";
 								Leer nc;
 								Para i = 1 Hasta cantidad_productos Hacer
-									si	codigo[i] == nc Entonces
+									SI codigo[i] == nc Entonces
+										
 										Escribir i, ") ", "Nombre: ", nombre[i], "| Precio: ", precio[i];
 										monto = monto + precio[i];
 										ca = 1
 										cantidad[i] = cantidad[i] - ca;
 										continuar = 3;
-									SiNo
-										Escribir "ERROR: CODIGO NO EXISTENTE";
+										
+										si codigo[i] <> nc Entonces
+											Escribir "ERROR: CODIGO NO EXISTENTE";
+										FinSi
+										
 									FinSi
+									
 								FinPara
 							Hasta Que continuar = 3;
 							
